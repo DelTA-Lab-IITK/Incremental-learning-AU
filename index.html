@@ -1,283 +1,372 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>MHD</title>
-    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-    <script crossorigin="anonymous"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+<html class="gr__filebox_ece_vt_edu"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+	<style>
+	body {
+		background: white;
+		color: #222222;
+		padding: 0;
+		margin: 0;
+		font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+		font-weight: normal;
+		font-style: normal;
+		line-height: 1.4;
+   }
+	a:link {
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	a:active {
+		text-decoration: underline;
+	}
+	p{
+		font-size:1.2em;
+	}
+	img {
+		width:100%;
+		max-width: 300px;
+	}
+	.rcorner{
+		border-radius: 25px;
+		border: 2px solid #8AC007;
+		padding: 20px;
+	}
+	div{
+		max-width:1200px;
+		position:relative;
+		font-family: Arial;
+	}
+	.bold{font-weight: bold;}
+	.italic{font-style: italic;}
+	.sz25{font-size:2.5em;}
+	.sz20{font-size:2.0em;}
+	.sz15{font-size:1.5em;}
+	.sz13{font-size:1.3em;}
+	.sz12{font-size:1.2em;}
+	.sz10{font-size:1.0em;}
+	.sz08{font-size:0.8em;}
+	.inline{display:inline-block;}
+	.no_margin{
+		margin: 0 0;
+	}
+	.padding20{
+		padding: 20px;
+	}
+	.halign{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.block_2
+	{
+		width:49%;
+		max-width: 512px;
+		display: inline-block;
+		position: relative;
+	}
+	.block_5_2
+	{
+		width:40%;
+		max-width: 410px;
+		display: inline-block;
+		position: relative;
+	}
+	.block_3
+	{
+		width:33%;
+		max_width: 341px;
+		display: inline-block;
+		position: relative;
+	}
+	.block_1
+	{
+		width:100%;
+		display: inline-block;
+		/*position: relative;*/
+		margin: 5px 5px;
+		text-align: justify;
+
+	}
+	.block_N
+	{
+		display: inline-block;
+		position: relative;
+	}
+	.block_6
+	{
+		width:16%;
+		display: inline-block;
+		position: relative;
+
+	}
+
+	img.header-img {
+		height: 140px;
+		border: 1px solid black;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	img.rounded {
+		border: 0px solid #eeeeee;
+		border-radius: 10px ;
+		-moz-border-radius: 10px ;
+		-webkit-border-radius: 10px ;
+	}
+
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+		        15px 15px 0 0px #fff, /* The fourth layer */
+		        15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+		        20px 20px 0 0px #fff, /* The fifth layer */
+		        20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+		        25px 25px 0 0px #fff, /* The fifth layer */
+		        25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+
+	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		        0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		        5px 5px 0 0px #fff, /* The second layer */
+		        5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		        10px 10px 0 0px #fff, /* The third layer */
+		        10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-top: 5px;
+		margin-left: 10px;
+		margin-right: 30px;
+		margin-bottom: 5px;
+	}
+
+	.vert-cent {
+		position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
+
+	.block_6_5
+	{
+		width:83%;
+		display: inline-block;
+		position: relative;
+	}
+	</style>
+	<title>
+		Attending to Discriminative Certainty for Domain Adaptation
+	</title>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141788472-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-141788472-1');
+</script>
+
 </head>
-<body>
+<body data-gr-c-s-loaded="true">
 
-<div class="container">
+<div class="halign">
+	<div style="float: left; width: 15%; padding: 1%;"><a target="_blank" href="http://deltalab.iitk.ac.in"><img src="https://delta-lab-iitk.github.io/CADA/cada/transparent.png" height="150" width= "150" alt="sherlock"/></a></div>
+	<div style="float: left; width: 65%;">
+	<div class="block_1">
 
-    <h2>
-        Multimodal Humor Dataset: Predicting Laughter tracks for Sitcoms
-    </h2>
-    <h6 style="color: gray">
-        WACV'21
-    </h6>
-    <hr>
+		<div class="block_1">
+			<p class="sz20 bold no_margin" align="center">Attending to Discriminative Certainty for Domain Adaptation</p>
+			<p align="center">
+			</p><p class="no_margin" align="center"> <a href="http://home.iitk.ac.in/~vinodkk/">Vinod Kumar Kurmi</a><sup>*</sup> , <a href="https://sshanu.github.io/">Shanu Kumar</a><sup>*</sup> , <a href="https://www.cse.iitk.ac.in/users/vinaypn/">Vinay P. Namboodiri</a></p>
+            <p class="no_margin" align="center">[* indicates equal contributions]</p>
+            <p  class="no_margin" align="center"><a href="http://deltalab.iitk.ac.in/">Delta Lab</a></p>
+				<p class="no_margin" align="center"><a href="http://iitk.ac.in/">Indian Institute of Technology Kanpur</a></p>
+				<p class="sz12 bold" align="center"><a href="http://openaccess.thecvf.com/content_CVPR_2019/html/Kurmi_Attending_to_Discriminative_Certainty_for_Domain_Adaptation_CVPR_2019_paper.html">[Paper]</a> <a href="https://arxiv.org/abs/1906.03502">[ArXiv]</a></a> <a href="https://github.com/DelTA-Lab-IITK/CADA"> [Code]</a><a href="https://delta-lab-iitk.github.io/CADA/cada/Supplementary_cada.pdf"> [Supplementary]</a><a <a href="https://delta-lab-iitk.github.io/CADA/cada/CADA_CVPR2019.pdf"> [Poster]</a><a 
 
-    <ul>
-        <li>
-            <h4><u>Demo Video</u></h4>
-            <br>
-            <div style="text-align: center">
-                <div class="embed-responsive embed-responsive-4by3" style="width: 50%; left: 27%">
-                    <iframe class="embed-responsive-item" src="demo_video.3gp"></iframe>
+			<p align="center">
+			</p>
+		</div>
+	</div>
+</div>
+<div style="float: left; width: 15%; padding: 1%;"><a target="_blank" href="https://iitk.ac.in/"><img src="https://delta-lab-iitk.github.io/CADA/cada/iitlogo.png" height="150" width= "150" alt="sherlock"/></a></div>
+
+<!--<div class="halign">
+		<div class="block_1">
+			<div class="">
+							
+			</div>
+	</div>
+</div>-->
+
+	<div class="block_1">
+		<div class="">
+			<p class="sz15 bold">Abstract</p>
+				<div class="padding20" style="float:right ">
+					<img style="max-width:601px" src="https://delta-lab-iitk.github.io/CADA/cada/model_cada.png">
+
+				</div>
+				<p class="sz12">
+				In this paper, we aim to solve for unsupervised domain adaptation of classifiers where we have access to label information for the source domain while these are not available for a target domain. While various methods have been proposed for solving these including adversarial discriminator based methods, most approaches have focused on the entire image based domain adaptation. In an image, there would be regions that can be adapted better, for instance, the foreground object may be similar in nature. To obtain such regions, we propose methods that consider the probabilistic certainty estimate of various regions and specific focus on these during classification for adaptation. We observe that just by incorporating the probabilistic certainty of the discriminator while training the classifier, we are able to obtain state of the art results on various datasets as compared against all the recent methods. We provide a thorough empirical analysis of the method by providing ablation analysis, statistical significance test, and visualization of the attention maps and t-SNE embeddings. These evaluations convincingly demonstrate the effectiveness of the proposed approach.
+				</p>
+		</div>
+	</div>
+
+   <!--      <div class="block_1">
+                <div class="halign" style="float:right">
+                    <img style="max-width:601px" src="http://home.iitk.ac.in/~vinodkk/idda_model/idda_model.jpg">
                 </div>
+    </div>
+ -->
+
+
+	<div class="block_1" id="code">
+			<div class="">
+				<p class="sz15 bold">tSNE Plots</p>
+			</div>
+			<div style="text-align: center;">
+           
+                    <img style="max-width:25%;" src="https://delta-lab-iitk.github.io/CADA/cada/sr_tsne.png">
+           
+
+          
+                    <img style="max-width:25%;" src="https://delta-lab-iitk.github.io/CADA/cada/grl_tsne.png">
+          
+
+           
+                    <img style="max-width:25%;" src="https://delta-lab-iitk.github.io/CADA/cada/attention_tsne.png">
             </div>
-            <br><br>
-        </li>
-        <li>
-            <h4><a href="Code.zip"><u>The source code of one of our models as an example code</u></a></h4>            <br>
-
-        </li>
-        <li>
-            <h4><a href="example_dataset.json"><u>An example subset of
-                our text dataset consisting of randomly sampled 400 dialogues</u></a></h4>            <br>
-
-        </li>
-        <li>
-            <h4><u>Additional Plots/Figures</u></h4>
-            <br>
+	</div>
 
 
-            <table class="table table-striped table-bordered">
-                <caption style="text-align: center">tSNE plots of Visual Dialogs</caption>
-                <tr>
-                    <td>
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53881679-474cb100-403a-11e9-9d92-c71a0c634fe9.png"
-                             width="100%">
-                    </td>
-                </tr>
-                <tr>
-                    <td width="60%">
-                        A tSNE plot made by randomly selecting 1500 images (each from Humorous and Non-Humorous set) as
-                        the last
-                        frame of some visual dialog turns. Sometimes these visual models could cheat by detecting some
-                        pattern
-                        inHumorous/Non-Humorous visual dialogs like specific camera angle etc. The above plot hints
-                        towards its
-                        absence.To visualize the plot better, each image is represented by a dot and the corresponding
-                        plot is
-                        shown below. (Currentplot is slightly scaled up to ease the visibility.)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53881680-47e54780-403a-11e9-823b-79386e56c39e.png"
-                             width="100%">
-                    </td>
-                </tr>
-                <tr>
-                    <td width="60%">
-                        A green dot represents a humorous sample and red dot, a non-humorous sample. They seem to be
-                        randomly
-                        distributed, hinting towards absence of any such bias.
-                    </td>
-                </tr>
-            </table>
 
-            <br>
-            <br>
+	<!-- <div class="block_1" id="code">
+			<div class="">
+				<p class="sz15 bold">Proxy-distance</p>
+			</div>
+			<div style="text-align: center;">
+           
+                    <img style="max-width:28%;" src="http://home.iitk.ac.in/~vinodkk/cada/proxy_a_distance.png">
+           
 
-            <table class="table table-striped table-bordered">
-                <caption style="text-align: center"> Bar plots drawn for the word distribution of dialogs spoken by Top
-                    6 Speakers in our dataset. Similarity in the top 20 set of each plot suggests that humor/non-humor
-                    is not biased due to a particular speaker.
-                </caption>
+          
+                    <img style="max-width:25%;" src="http://home.iitk.ac.in/~vinodkk/cada/proxy_crop.png">
+          
 
-                <tr>
-                    <td>
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/21227893/58746598-83a17900-8492-11e9-9479-62cdd7b618e2.png"
-                             width="100%">
-                    </td>
-                    <td>
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/21227893/58746604-8dc37780-8492-11e9-8f8d-b41152fc466b.png"
-                             width="100%">
-                    </td>
-                </tr>
+            </div>
+	</div>
+ -->
 
-                <tr>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/21227893/58746601-8c924a80-8492-11e9-8ca0-2909a7c8b681.png"
-                             width="100%">
-                    </td>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/21227893/58746605-8e5c0e00-8492-11e9-91b2-0344751e5cfe.png"
-                             width="100%">
-                    </td>
-                </tr>
+<div class="block_1" id="code">
+			<div class="">
+				<p class="sz15 bold">Visualization</p>
+			</div>
+			<div style="text-align: center;">
+           
+             	<img style="max-width:50%;" src="https://delta-lab-iitk.github.io/CADA/cada/predictive_visualize_training.png">
+          
 
-                <tr>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/21227893/58746602-8d2ae100-8492-11e9-9482-cc834d219e5a.png"
-                             width="100%">
-                    </td>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/21227893/58746603-8dc37780-8492-11e9-9502-5312f6985737.png"
-                             width="100%">
-                    </td>
-                </tr>
-            </table>
-
-            <br>
-            <br>
-
-            <table class="table table-striped table-bordered">
-                <caption style="text-align: center">Other Dataset Statistics
-                </caption>
-
-                <tr>
-                    <td width="33.33%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53884884-88e15a00-4042-11e9-99a5-8fdd7a46ce68.png"
-                             width="100%">
-                    </td>
-                    <td width="33.33%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53952853-f13e4300-40f7-11e9-9444-7d9a030dc4ae.png"
-                             width="100%">
-                    </td>
-                    <td width="33.33%">
-                        <img src="https://user-images.githubusercontent.com/48205355/53885089-ea092d80-4042-11e9-94c3-b4690723cb32.png"
-                             width="100%">
-                    </td>
-                </tr>
-                <tr>
-                    <td width="33.33%">The figure showing average time per turn in a Dialog, across the Dataset.</td>
-                    <td width="33.33%">The figure showing average dialog time, across the Dataset.</td>
-                    <td width="33.33%">The figure showing contribution of each speaker in generating humor, across the
-                        Dataset.
-                    </td>
-                </tr>
-            </table>
-
-            <!--    #### Proposed Model, Multimodal Self Attention Model(MSAM) for Multimodal Humor:-->
-            <!--    <table>-->
-            <!--        <tr>-->
-            <!--            <td width="100%">-->
-            <!--                <img src="https://user-images.githubusercontent.com/21227893/58746488-53a5a600-8491-11e9-9769-f1f9093db75e.png">-->
-            <!--            </td>-->
-            <!--        </tr>-->
-
-            <!--    </table>-->
-            <br><br>
-            <h4> MSAM model </h4>
-            <table class="table table-striped table-bordered">
-                <caption>The figure describing the proposed Multimodal Self Attention Model (MSAM) for the laughter detection task. We obtain features of each joint dialogue turn using Multimodal Self attention network. We then obtain the final feature vector using a sequential network before feeding the resultant vector to the binary classifier.</caption>
-                <tr>
-                    <td width="60%">
-                        <img align="center" src="assets/m.png" width="100%">
-                    </td>
-                </tr>
-            </table>
-
-            <br><br>
-            <h4> Qualitative results </h4>
-            <table class="table table-striped table-bordered">
-                <caption>
-                    Randomly sampled results (MSAM model) of each prediction category, (correct/incorrect) x (humor/non-humor). Eg. Humor label in a red box means ground truth label was non-humor but predicted label was humor.
-
-                </caption>
-                <tr>
-                    <td>
-                        <img align="center" src="assets/q.png" width="100%">
-                    </td>
-                </tr>
-            </table>
-
-            <br><br>
-            <h4> Explaining humor </h4>
-            <table class="table table-striped table-bordered">
-                <caption>
-                    The left column shows visualization of attention at the word level and the right column shows attention visualization at turn level.
-                </caption>
-                <tr>
-                    <td>
-                        <img align="center" src="assets/c.png" width="100%">
-                    </td>
-                </tr>
-            </table>
-
-            <br><br>
-            <h4> Baseline Models </h4>
-            <table class="table table-striped table-bordered">
-                <caption style="text-align: center">Fusion Models</caption>
-
-                <tr>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53886442-0e1a3e00-4046-11e9-87a3-259d68593d62.png"
-                             width="100%">
-                    </td>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53886443-0e1a3e00-4046-11e9-808b-6e50ec5a9b04.png"
-                             width="100%">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td align="center" width="50%">Text based Fusion Model (TFM)</td>
-                    <td align="center" width="50%">Video based Fusion Model (VFM)</td>
-                </tr>
-            </table>
+            </div>
+	</div>
 
 
-            <table class="table table-striped table-bordered">
-                <caption style="text-align: center">Attention Models</caption>
 
-                <tr>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53887017-5f76fd00-4047-11e9-97d6-7e690101f2a9.png"
-                             width="100%">
-                    </td>
-                    <td width="50%">
-                        <img align="center"
-                             src="https://user-images.githubusercontent.com/48205355/53887018-600f9380-4047-11e9-94b9-062446d18306.png"
-                             width="100%">
-                    </td>
-                </tr>
+	<div class="block_1" id="code">
+			<div class="">
+				<p class="sz15 bold">Code Coming Soon!</p>
+			</div>
+			
+           		
+             	<!--<img style="" src="https://github.com/DelTA-Lab-IITK/CADA/edit/gh-pages/attention_tsne.png">
+          	
+          		
+          		<span  style="position: absolute; bottom: 200px; margin-left:10px;">Vinod Kumar Kurmi helloJau ho<br>hi and hello</span>
+          		-->
 
-                <tr>
-                    <td align="center" width="50%">Text based Attention Model (TAM)</td>
-                    <td align="center" width="50%">Video based Attention Model (VAM)</td>
-                </tr>
-            </table>
+          	<center> 
+          	 <table width="700px">
+          	 <tbody align="center"><tr>
+				  <td><a target="_blank" href="https://arxiv.org/pdf/1906.03502.pdf"><img class="layered-paper-big" style="height:150px" src="https://delta-lab-iitk.github.io/CADA/cada/page1.jpg"></a></td>
+				  <td><span style="font-size:12pt; margin-left: 30px;">V. K. Kurmi, Shanu Kumar, V. P. Namboodiri<br>
+				  <b><span style="font-size:12pt; margin-left: 40px;">Attending to Discriminative Certainty for Domain Adaptation</span></b><br>
+				  <!-- <span style="font-size:12pt">In IJCNN, 2019.  -->
+				  <!-- (hosted on <a href="https://arxiv.org/abs/1711.11586">arXiv</a>) -->
+				  </span>
+				  <span style="font-size:4pt"><a href="https://junyanz.github.io/BicycleGAN/"><br></a>
+				  </span>
+				  </td>
+  	              
+              </tr>
+  		  </tbody>
+  		  </table>	
+          </center>
+          
+	</div>
 
-            <br>
-            <br>
-            <br>
-
-        </li>
-
-    </ul>
 
 
-    <br><br>
+	<!-- <div class="block_1" id="data">
+			<div class="">
+				<p class="sz15 bold">Alexnet Pretrained Model</p>
+				<p>Can be found  <a href="http://home.iitk.ac.in/~vinodkk/">[Coming Soon!]</a>.</p>
+			</div>
+	</div> -->
+	<div class="block_1" id="Bibtex">
+			<div class="">
+							<p class="sz15 bold">BibTex</p>
+							<p style="font-family: Comic Sans MS; font-size: 14px;">@InProceedings{Kurmi_2019_CVPR,<br>
+							author = {Kumar Kurmi, Vinod  and Kumar, Shanu and Namboodiri, Vinay P.},<br>
+							title = {Attending to Discriminative Certainty for Domain Adaptation},<br>
+							booktitle = {IEEE Computer Society Conference on Computer Vision and Pattern Recognition(CVPR),},<br>
+							month = {June},<br>
+							year = {2019}<br>
+							}<br>
+						    </p>
+			</div>
+	</div>
+
+	<div class="block_1">
+		<div class="">
+			<p class="sz15 bold">Acknowledgement</p>
+			<p>We acknowledge the help provided by <a target="_blank" href="http://deltalab.iitk.ac.in/">Delta Lab</a> members, who have supported us for this research activity.
+			</p>
+		</div>
+	</div>
 
 
 </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141358857-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-</body>
-</html>
+  gtag('config', 'UA-141358857-1');
+</script>
+
+
+<script type="text/javascript">
+
+</script>
+
+</body></html>
